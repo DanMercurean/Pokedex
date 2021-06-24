@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Pokedex';
+  links = [
+    { path: 'pokemon-list', label: 'POKEMON' },
+    { path: 'about', label: 'ABOUT' }
+  ]
 }

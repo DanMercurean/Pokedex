@@ -1,15 +1,16 @@
 <mat-drawer-container class="example-container" autosize>
   <mat-drawer #sidenav class="app-sidenav mat-elevation-z5" mode="side">
     <div class="logo-container">
-      Platz für Logo
+      <img src="./assets/img/logo.png">
     </div>
 
 
     <ul class="menu-items">
+      <li routerLink='/about'><mat-icon>home</mat-icon>About</li>
       <li routerLink='/'>
         <mat-icon>catching_pokemon</mat-icon> Pokemon List
       </li>
-      <li routerLink='/about'>About</li>
+      
     </ul>
 
   </mat-drawer>
@@ -29,7 +30,7 @@
   </div>
   <div class="app-content">
     <router-outlet>
-          <app-pokemon-list></app-pokemon-list>
+          <!-- <app-pokemon-list></app-pokemon-list> -->
       </router-outlet>
   </div>
 </mat-drawer-container>

@@ -1,8 +1,24 @@
 <!--Pokemon Grid -->
+<!-- <div class="wrapper">
+    <mat-card *ngFor="let pokemon of pokemons | paginate: { itemsPerPage: 12, currentPage: page, totalItems: totalPokemons }">
+      <mat-card-header>
+        <img [src]="pokemon.sprites.front_default" alt="Pokemon">
+        <mat-card-title>
+            <h3>{{ pokemon.name }}</h3>
+        </mat-card-title>
+        <h3>#{{pokemon.id}}</h3>
+        <mat-card-subtitle>
+        
+        </mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+  </div> -->
+
 <div class="pokemon-grid">
     <div class="box" *ngFor="let pokemon of pokemons | paginate: { itemsPerPage: 12, currentPage: page, totalItems: totalPokemons }">
         <img [src]="pokemon.sprites.front_default" alt="Pokemon">
         <h3>{{ pokemon.name }}</h3>
+        <h3>#{{pokemon.id}}</h3>
         <p>
             <b>Type:</b> {{pokemon.types[0].type.name}}
         </p>
