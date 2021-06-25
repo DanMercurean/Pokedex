@@ -1,24 +1,22 @@
+<section class="search__container">
+    <input
+      class="search__input"
+      type="text"
+      placeholder="search..."
+      alt="search"
+      (keyup)="debounce.next($event.target)"
+      [value]="value"
+    />
+  </section>
 <!--Pokemon Grid -->
-<!-- <div class="wrapper">
-    <mat-card *ngFor="let pokemon of pokemons | paginate: { itemsPerPage: 12, currentPage: page, totalItems: totalPokemons }">
-      <mat-card-header>
-        <img [src]="pokemon.sprites.front_default" alt="Pokemon">
-        <mat-card-title>
-            <h3>{{ pokemon.name }}</h3>
-        </mat-card-title>
-        <h3>#{{pokemon.id}}</h3>
-        <mat-card-subtitle>
-        
-        </mat-card-subtitle>
-      </mat-card-header>
-    </mat-card>
-  </div> -->
-
 <div class="pokemon-grid">
-    <div class="box" *ngFor="let pokemon of pokemons | paginate: { itemsPerPage: 12, currentPage: page, totalItems: totalPokemons }">
+    <mat-grid-list (click)="openPokemonDetails()" class="box" 
+    [cols]="breakpoint" rowHeight="2:0.5" (window:resize)="onResize($event)"
+    *ngFor="let pokemon of pokemons | paginate: { itemsPerPage: 12, currentPage: page, totalItems: totalPokemons }">
+    
         <img [src]="pokemon.sprites.front_default" alt="Pokemon">
-        <h3>{{ pokemon.name }}</h3>
-        <h3>#{{pokemon.id}}</h3>
+        <mat-grid-tile><h3>{{ pokemon.name | uppercase }}</h3></mat-grid-tile>
+        <h3>Nr.{{pokemon.id}}</h3>
         <p>
             <b>Type:</b> {{pokemon.types[0].type.name}}
         </p>
@@ -31,7 +29,10 @@
         <p>
             <b>Attack Power:</b> {{pokemon.stats[1].base_stat}}
         </p>
-    </div>
+        <p>
+            <b>Moves:</b> {{pokemon.moves[0].move.name}}
+        </p>
+    </mat-grid-list>
 </div>
 <!-- End of Pokemon Grid-->
 

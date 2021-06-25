@@ -11,4 +11,5 @@ export class AppComponent {
     { path: 'pokemon-list', label: 'POKEMON' },
     { path: 'about', label: 'ABOUT' }
   ]
+  
 }
