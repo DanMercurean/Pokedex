@@ -1,32 +1,32 @@
-import { Component, Inject, OnInit, Optional } from '@angular/core';
+import { Component, Inject, Optional } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { MAT_BOTTOM_SHEET_DATA } from '@angular/material/bottom-sheet';
 import { PokemonDetail } from '../models/pokemon.detail';
-
+import { PokemonList } from '../models/pokemon.list';
+import { PokemonListComponent } from '../pokemon-list/pokemon-list.component';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-pokemon-details',
   templateUrl: './pokemon-details.component.html',
   styleUrls: ['./pokemon-details.component.scss']
 })
-export class PokemonDetailsComponent implements OnInit {
-
-  pokemon: PokemonDetail;
-  // classicMode: boolean;
-
+export class PokemonDetailsComponent {
+  pokemon = {};
+  classicMode: boolean;
+  
   constructor(
-    @Inject(MAT_DIALOG_DATA) public data: any) {
+    @Optional() @Inject(MAT_DIALOG_DATA) public data: any
+  ) {
     // this.pokemon = data.pokemon;
     // this.classicMode = data.classicMode;
-  }
-
-  ngOnInit(): void {
+    console.log(this.pokemon);
   }
   getAbilities(): string {
-    return this.pokemon.abilities.map(x => x.ability.name).join(', ');
+    return this.pokemon['abilities'].map(x => x.ability.name).join(', ');
   }
 
   getPrincipalType(list: any[]) {
     return list.filter(x => x.slot === 1)[0]?.type.name;
   }
+
 }

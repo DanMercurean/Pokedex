@@ -56,7 +56,8 @@ export class PokemonListComponent implements OnInit {
       });
   }
 
-  openPokemonDetails() {
-    this.dialog.open(PokemonDetailsComponent);
+  openPokemonDetails(i) {
+    const myPokemon = this.pokemons[i];
+    this.dialog.open(PokemonDetailsComponent).componentInstance.pokemon = myPokemon;
   }
 }

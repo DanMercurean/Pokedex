@@ -1,37 +1,35 @@
 <section class="search__container">
-    <input
-      class="search__input"
-      type="text"
-      placeholder="search..."
-      alt="search"
-      (keyup)="debounce.next($event.target)"
-      [value]="value"
-    />
-  </section>
+    <input class="search__input" type="text" placeholder="search..." alt="search" (keyup)="debounce.next($event.target)"
+        [value]="value" />
+</section>
 <!--Pokemon Grid -->
 <div class="pokemon-grid">
-    <mat-grid-list (click)="openPokemonDetails()" class="box" 
-    [cols]="breakpoint" rowHeight="2:0.5" (window:resize)="onResize($event)"
-    *ngFor="let pokemon of pokemons | paginate: { itemsPerPage: 12, currentPage: page, totalItems: totalPokemons }">
-    
-        <img [src]="pokemon.sprites.front_default" alt="Pokemon">
-        <mat-grid-tile><h3>{{ pokemon.name | uppercase }}</h3></mat-grid-tile>
-        <h3>Nr.{{pokemon.id}}</h3>
-        <p>
-            <b>Type:</b> {{pokemon.types[0].type.name}}
-        </p>
-        <p>
-            <b>Height:</b> {{pokemon.height}}
-        </p>
-        <p>
-            <b>Health:</b> {{pokemon.stats[0].base_stat}}
-        </p>
-        <p>
-            <b>Attack Power:</b> {{pokemon.stats[1].base_stat}}
-        </p>
-        <p>
-            <b>Moves:</b> {{pokemon.moves[0].move.name}}
-        </p>
+    <mat-grid-list (click)="openPokemonDetails(i)" class="box" [cols]="breakpoint" rowHeight="2:0.5"
+        (window:resize)="onResize($event)"
+        *ngFor="let pokemon of pokemons | paginate: { itemsPerPage: 12, currentPage: page, totalItems: totalPokemons }; let i = index;">
+
+        <img [src]="pokemon['sprites'].front_default" alt="Pokemon">
+        <div class="pokemon-container">
+            <mat-grid-tile>
+                <h3>{{ pokemon.name | uppercase }}</h3>
+            </mat-grid-tile>
+            <h3>Nr.{{pokemon.id}}</h3>
+            <p>
+                <b>Type:</b> {{pokemon.types[0].type.name}}
+            </p>
+            <p>
+                <b>Height:</b> {{pokemon.height}}
+            </p>
+            <p>
+                <b>Health:</b> {{pokemon.stats[0].base_stat}}
+            </p>
+            <p>
+                <b>Attack Power:</b> {{pokemon.stats[1].base_stat}}
+            </p>
+            <p>
+                <b>Moves:</b> {{pokemon.moves[0].move.name}}
+            </p>
+        </div>
     </mat-grid-list>
 </div>
 <!-- End of Pokemon Grid-->
