@@ -2,20 +2,20 @@
     height: 50vh;
 }
 
-.sheet__img {
+.sheet_img {
     display: flex;
     justify-content: center;
     margin-top: 30px;
     margin-bottom: 20px;
 }
 
-.sheet__tab {
+.sheet_tab {
     display: flex;
     margin-top: 20px;
     margin-left: 20px;
 }
 
-.sheet__item {
+.sheet_item {
     display: flex;
     flex-direction: column;
     div {
@@ -23,14 +23,22 @@
     }
 }
 
-.sheet__progress {
+.sheet_progress {
     display: flex;
     div {
         margin-top: 20px;
     }
 }
 
-.sheet__item_label {
+.sheet_item_label {
     margin-right: 20px;
     font-weight: bold;
+}
+
+.header-row {
+    h2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }

@@ -1,11 +1,10 @@
 <section class="search__container">
     <input class="search__input" type="text" placeholder="search..." alt="search" (keyup)="debounce.next($event.target)"
-        [value]="value" />
+        [value]="" />
 </section>
 <!--Pokemon Grid -->
 <div class="pokemon-grid">
     <mat-grid-list (click)="openPokemonDetails(i)" class="box" [cols]="breakpoint" rowHeight="2:0.5"
-        (window:resize)="onResize($event)"
         *ngFor="let pokemon of pokemons | paginate: { itemsPerPage: 12, currentPage: page, totalItems: totalPokemons }; let i = index;">
 
         <img [src]="pokemon['sprites'].front_default" alt="Pokemon">
