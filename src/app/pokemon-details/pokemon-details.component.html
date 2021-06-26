@@ -16,6 +16,7 @@
                     <div class="color-gray sheet_item_label">Ordner-number: </div>
                     <div class="color-gray sheet_item_label">Height: </div>
                     <div class="color-gray sheet_item_label">Weight: </div>
+                    <div class="color-gray sheet_item_label">Moves: </div>
 
                 </div>
                 <div class="sheet_item">
@@ -24,6 +25,8 @@
                     <div>{{pokemon['order']}}</div>
                     <div>{{pokemon['height']}}</div>
                     <div>{{pokemon['weight']}}</div>
+                    <div>{{getMoves()}}</div>
+                    <!-- pokemon['moves'][0]['move']['name'] -->
                 </div>
             </div>
         </mat-tab>

@@ -4,8 +4,18 @@ mat-toolbar {
   position: relative;
   z-index: 1;
   height: 45px;
+  position: fixed;
 }
-
+mat-drawer{
+  position:fixed;
+}
+.ball {
+  position: fixed;
+  height: 114px;
+  right: 10px;
+  top: 8px;
+  z-index: 1;
+}
 .app-content {
   padding: 20px;
   height: 100vh;
@@ -16,7 +26,6 @@ mat-toolbar {
 .app-sidenav {
   min-width: 300px;
 }
-
 .logo-container {
   border-bottom: 1px solid rgba(0, 0, 0, 0.04);
   padding-left: 20px;
@@ -29,7 +38,9 @@ mat-toolbar {
     width: 24%;
   }
 }
-
+.flex {
+  display: flex;
+}
 .menu-items {
   list-style-type: none;
   padding: 0;
@@ -55,4 +66,8 @@ mat-toolbar {
       outline: none;
     }
   }
+}
+
+@media (max-width: 400px) {
+  
 }

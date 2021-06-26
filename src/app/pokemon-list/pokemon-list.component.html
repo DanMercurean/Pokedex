@@ -8,26 +8,12 @@
         *ngFor="let pokemon of pokemons | paginate: { itemsPerPage: 12, currentPage: page, totalItems: totalPokemons }; let i = index;">
 
         <img [src]="pokemon['sprites'].front_default" alt="Pokemon">
+        <img src="./assets/img/pokeball_black.png" alt="">
         <div class="pokemon-container">
             <mat-grid-tile>
                 <h3>{{ pokemon.name | uppercase }}</h3>
             </mat-grid-tile>
-            <h3>Nr.{{pokemon.id}}</h3>
-            <p>
-                <b>Type:</b> {{pokemon.types[0].type.name}}
-            </p>
-            <p>
-                <b>Height:</b> {{pokemon.height}}
-            </p>
-            <p>
-                <b>Health:</b> {{pokemon.stats[0].base_stat}}
-            </p>
-            <p>
-                <b>Attack Power:</b> {{pokemon.stats[1].base_stat}}
-            </p>
-            <p>
-                <b>Moves:</b> {{pokemon.moves[0].move.name}}
-            </p>
+            <p>Nr.{{pokemon.id}}</p>
         </div>
     </mat-grid-list>
 </div>

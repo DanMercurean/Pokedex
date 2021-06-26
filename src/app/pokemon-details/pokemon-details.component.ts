@@ -24,7 +24,9 @@ export class PokemonDetailsComponent {
   getAbilities(): string {
     return this.pokemon['abilities'].map(x => x.ability.name).join(', ');
   }
-
+  getMoves(): string {
+    return this.pokemon['moves'].map(x => x.move.name).join(', ');
+  }
   getPrincipalType(list: any[]) {
     return list.filter(x => x.slot === 1)[0]?.type.name;
   }
