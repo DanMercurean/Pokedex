@@ -16,10 +16,12 @@ export class PokemonListComponent implements OnInit {
   @Input() value: string;
   pokemons: any[] = [];
   page = 1;
+  filter = '';
   totalPokemons: number;
   breakpoint: number;
 
   constructor(
+  
     public dialog: MatDialog,
     private dataService: DataService
   ) { }
@@ -55,7 +57,9 @@ export class PokemonListComponent implements OnInit {
         });
       });
   }
-
+  setFilterValue(event: any): void {
+    this.filter = event as string;
+  }
   openPokemonDetails(i) {
     const myPokemon = this.pokemons[i];
     this.dialog.open(PokemonDetailsComponent).componentInstance.pokemon = myPokemon;

@@ -19,6 +19,9 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { CommonModule } from '@angular/common';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { DataService } from './services/data.service';
+
+
 
 @NgModule({
   declarations: [
@@ -29,6 +32,7 @@ import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
     ProgressBarComponent
   ],
   imports: [
+    NgxPaginationModule,
     BrowserModule,
     AppRoutingModule,
     MatToolbarModule,
@@ -37,14 +41,13 @@ import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
     MatButtonModule,
     MatIconModule,
     HttpClientModule,
-    NgxPaginationModule,
     MatDialogModule,
     MatChipsModule,
     MatTabsModule,
     CommonModule,
     MatBottomSheetModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent],
   entryComponents: [PokemonDetailsComponent, ProgressBarComponent]
 })

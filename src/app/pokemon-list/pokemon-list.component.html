@@ -1,6 +1,6 @@
 <section class="search__container">
-    <input class="search__input" type="text" placeholder="search..." alt="search" (keyup)="debounce.next($event.target)"
-        [value]="" />
+    <input class="search__input" type="text" placeholder="search..." alt="search" (typing)="setFilterValue($event)"
+        [value]="filter" (keyup)="debounce.next($event.target)" />
 </section>
 <!--Pokemon Grid -->
 <div class="pokemon-grid">
@@ -13,7 +13,7 @@
             <mat-grid-tile>
                 <h3>{{ pokemon.name | uppercase }}</h3>
             </mat-grid-tile>
-            <p>Nr.{{pokemon.id}}</p>
+            <div value="filter"></div><p>Nr.{{pokemon.id}}</p>
         </div>
     </mat-grid-list>
 </div>

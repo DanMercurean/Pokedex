@@ -1,6 +1,11 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatDialogModule } from '@angular/material/dialog';
+import { RouterTestingModule } from '@angular/router/testing';
+import { PaginationControlsComponent } from 'ngx-pagination';
 
 import { PokemonListComponent } from './pokemon-list.component';
+
 
 describe('PokemonListComponent', () => {
   let component: PokemonListComponent;
@@ -8,9 +13,20 @@ describe('PokemonListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PokemonListComponent ]
+      imports: [
+        MatDialogModule,
+        RouterTestingModule,
+        HttpClientTestingModule 
+      ],
+      declarations: [PokemonListComponent],
+      providers: [
+        {
+          provide: PaginationControlsComponent,
+          useValue: {PaginationControlsComponent}
+        }
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

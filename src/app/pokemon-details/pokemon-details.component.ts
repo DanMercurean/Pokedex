@@ -1,9 +1,5 @@
 import { Component, Inject, Optional } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { PokemonDetail } from '../models/pokemon.detail';
-import { PokemonList } from '../models/pokemon.list';
-import { PokemonListComponent } from '../pokemon-list/pokemon-list.component';
-import { DataService } from '../services/data.service';
+import { MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-pokemon-details',
@@ -19,7 +15,7 @@ export class PokemonDetailsComponent {
   ) {
     // this.pokemon = data.pokemon;
     // this.classicMode = data.classicMode;
-    console.log(this.pokemon);
+    // console.log(this.pokemon);
   }
   getAbilities(): string {
     return this.pokemon['abilities'].map(x => x.ability.name).join(', ');
