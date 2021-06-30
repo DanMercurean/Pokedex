@@ -3,6 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatDialogModule } from '@angular/material/dialog';
 import { RouterTestingModule } from '@angular/router/testing';
 import { PaginationControlsComponent } from 'ngx-pagination';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { PokemonListComponent } from './pokemon-list.component';
 
@@ -16,6 +17,7 @@ describe('PokemonListComponent', () => {
       imports: [
         MatDialogModule,
         RouterTestingModule,
+        NgxPaginationModule,
         HttpClientTestingModule 
       ],
       declarations: [PokemonListComponent],
