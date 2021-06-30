@@ -24,13 +24,15 @@ describe('PokemonDetailsComponent', async () => {
     })
       .compileComponents();
   });
-  
+
   beforeEach(() => {
     fixture = TestBed.createComponent(PokemonDetailsComponent);
     component = fixture.componentInstance
     fixture.detectChanges();
   });
+
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });
